@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web-Studio – Demo-Seiten</title>
+  <meta name="description" content="Beispiel-Websites für Musiker und Selbstständige: ein Producer und eine Tischlerei, beide fiktiv.">
+  <meta property="og:title" content="Web-Studio – Demo-Seiten">
+  <meta property="og:description" content="Beispiel-Websites für Musiker und Selbstständige.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1b1f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='16' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EWS%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --text: #1b1b1f;
+      --muted: #5c5c66;
+      --card: #ffffff;
+      --line: #e3e1db;
+      --focus: #2a5bd7;
+      --radius: 14px;
+      --space: clamp(1rem, 4vw, 2rem);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: calc(var(--space) * 2) var(--space); }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 .5rem; }
+    .intro { color: var(--muted); max-width: 40rem; margin: 0 0 2rem; }
+    .grid { display: grid; gap: var(--space); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .card:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .swatch { height: 140px; display: grid; place-items: center; font-size: 2.2rem; font-weight: 900; letter-spacing: .04em; }
+    .swatch--nord { background: #0a0a0b; color: #c8ff2e; font-family: "Arial Black", Arial, sans-serif; }
+    .swatch--falk { background: #f6f1e8; color: #a24a24; font-family: "Palatino Linotype", Palatino, Georgia, serif; font-style: italic; font-weight: 400; }
+    .card-body { padding: 1.1rem 1.25rem 1.4rem; }
+    .card h2 { font-size: 1.2rem; margin: 0 0 .25rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .more { display: inline-block; margin-top: .75rem; font-weight: 600; color: var(--text); }
+    footer { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+      .card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Demo-Seiten</h1>
+    <p class="intro">Zwei Beispiel-Websites: eine für Musiker, eine für Selbstständige. Beide laufen auf dem Handy wie am Rechner und lassen sich mit neuen Farben, Texten und Bildern zur eigenen Seite machen.</p>
+
+    <div class="grid">
+      <a class="card" href="demos/musiker-producer/">
+        <div class="swatch swatch--nord" aria-hidden="true">NØRD</div>
+        <div class="card-body">
+          <h2>NØRD – Producer</h2>
+          <p>Dunkel und laut: Releases, Beats mit Hörprobe und Lizenzpreisen, Services und Booking.</p>
+          <span class="more">Demo ansehen →</span>
+        </div>
+      </a>
+      <a class="card" href="demos/handwerk-tischlerei/">
+        <div class="swatch swatch--falk" aria-hidden="true">Falk</div>
+        <div class="card-body">
+          <h2>Tischlerei Falk – Handwerk</h2>
+          <p>Hell und warm: Leistungen mit Preisen, Preisrechner mit Live-Zeichnung, Referenzen und Anfrage.</p>
+          <span class="more">Demo ansehen →</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>Alle Namen, Preise und Kundenstimmen auf diesen Seiten sind erfunden. Die Formulare senden nichts.</footer>
+  </main>
+</body>
+</html>
