@@ -1,91 +1,425 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+  MARKENNAME: „Web-Studio“ ist ein Platzhalter.
+  Zum Ändern in index.html, impressum.html und datenschutz.html suchen & ersetzen
+  (dazu das „W“ im Logo und im Favicon).
+-->
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web-Studio – Demo-Seiten</title>
-  <meta name="description" content="Beispiel-Websites für Musiker und Selbstständige: ein Producer und eine Tischlerei, beide fiktiv.">
-  <meta property="og:title" content="Web-Studio – Demo-Seiten">
-  <meta property="og:description" content="Beispiel-Websites für Musiker und Selbstständige.">
+  <title>Web-Studio – Websites für Musiker und Selbstständige</title>
+  <meta name="description" content="Schlanke Websites und Landingpages für Musiker und Selbstständige. Ab 149&nbsp;€, ohne Abo, Hosting kostenlos. Preis direkt online berechnen.">
+  <meta property="og:title" content="Web-Studio – Websites für Musiker und Selbstständige">
+  <meta property="og:description" content="Landingpage ab 149&nbsp;€, Website ab 349&nbsp;€. Ohne Abo, ohne Baukasten, Hosting kostenlos.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
+  <!-- Solange Impressum und Datenschutz Platzhalter sind: nicht indexieren. Danach entfernen. -->
   <meta name="robots" content="noindex">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1b1f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='16' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EWS%3C/text%3E%3C/svg%3E">
-  <style>
-    :root {
-      --bg: #f7f6f3;
-      --text: #1b1b1f;
-      --muted: #5c5c66;
-      --card: #ffffff;
-      --line: #e3e1db;
-      --focus: #2a5bd7;
-      --radius: 14px;
-      --space: clamp(1rem, 4vw, 2rem);
-      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    main { max-width: 960px; margin: 0 auto; padding: calc(var(--space) * 2) var(--space); }
-    h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 .5rem; }
-    .intro { color: var(--muted); max-width: 40rem; margin: 0 0 2rem; }
-    .grid { display: grid; gap: var(--space); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.08); }
-    .card:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-    .swatch { height: 140px; display: grid; place-items: center; font-size: 2.2rem; font-weight: 900; letter-spacing: .04em; }
-    .swatch--nord { background: #0a0a0b; color: #c8ff2e; font-family: "Arial Black", Arial, sans-serif; }
-    .swatch--falk { background: #f6f1e8; color: #a24a24; font-family: "Palatino Linotype", Palatino, Georgia, serif; font-style: italic; font-weight: 400; }
-    .card-body { padding: 1.1rem 1.25rem 1.4rem; }
-    .card h2 { font-size: 1.2rem; margin: 0 0 .25rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .more { display: inline-block; margin-top: .75rem; font-weight: 600; color: var(--text); }
-    footer { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
-    @media (prefers-reduced-motion: reduce) {
-      .card { transition: none; }
-      .card:hover { transform: none; }
-    }
-  </style>
+  <meta name="theme-color" content="#0b0d12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f5bd8'/%3E%3Ctext x='16' y='22.5' font-family='Segoe UI,Arial,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Demo-Seiten</h1>
-    <p class="intro">Zwei Beispiel-Websites: eine für Musiker, eine für Selbstständige. Beide laufen auf dem Handy wie am Rechner und lassen sich mit neuen Farben, Texten und Bildern zur eigenen Seite machen.</p>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
 
-    <div class="grid">
-      <a class="card" href="demos/musiker-producer/">
-        <div class="swatch swatch--nord" aria-hidden="true">NØRD</div>
-        <div class="card-body">
-          <h2>NØRD – Producer</h2>
-          <p>Dunkel und laut: Releases, Beats mit Hörprobe und Lizenzpreisen, Services und Booking.</p>
-          <span class="more">Demo ansehen →</span>
-        </div>
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="logo" href="#top" aria-label="Web-Studio – zum Seitenanfang">
+        <span class="logo__mark" aria-hidden="true">W</span>
+        <span>Web-Studio</span>
       </a>
-      <a class="card" href="demos/handwerk-tischlerei/">
-        <div class="swatch swatch--falk" aria-hidden="true">Falk</div>
-        <div class="card-body">
-          <h2>Tischlerei Falk – Handwerk</h2>
-          <p>Hell und warm: Leistungen mit Preisen, Preisrechner mit Live-Zeichnung, Referenzen und Anfrage.</p>
-          <span class="more">Demo ansehen →</span>
-        </div>
-      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+      <nav id="menu" class="nav__menu" aria-label="Hauptnavigation">
+        <a href="#arbeiten">Arbeiten</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#rechner">Preisrechner</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="#anfrage">Anfragen</a>
+      </nav>
     </div>
+  </header>
 
-    <footer>Alle Namen, Preise und Kundenstimmen auf diesen Seiten sind erfunden. Die Formulare senden nichts.</footer>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Websites für Musiker &amp; Selbstständige</p>
+          <h1 class="hero__title">Deine eigene Website. <span>Schnell online, ohne Abo.</span></h1>
+          <p class="hero__lead">Ich baue dir eine Seite, die auf dem Handy genauso gut aussieht wie am Rechner, schnell lädt und dir gehört. Kein Baukasten, keine monatlichen Gebühren, das Hosting kostet nichts.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#rechner">Preis berechnen</a>
+            <a class="btn btn--ghost" href="#arbeiten">Arbeiten ansehen</a>
+          </div>
+          <ul class="facts" aria-label="Auf einen Blick">
+            <li><strong>ab 149&nbsp;€</strong><span>Einmalpreis</span></li>
+            <li><strong>ca. 7 Tage</strong><span>bis online</span></li>
+            <li><strong>0&nbsp;€ / Monat</strong><span>fürs Hosting</span></li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="pv-host" id="hero-preview"></div>
+          <p class="hero__caption" id="hero-caption">Beispiel: Musikerin, 4 Seiten</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARBEITEN -->
+    <section class="section" id="arbeiten">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Arbeiten</p>
+          <h2>So kann deine Seite aussehen</h2>
+          <p class="section__lead">Zwei Demo-Projekte mit erfundenen Kunden: eins für die Musikszene, eins fürs Handwerk. Beide sind komplett klickbar, also probier ruhig alles aus.</p>
+        </header>
+
+        <div class="work">
+          <article class="work__item">
+            <a class="work__shot work__shot--nord" href="demos/musiker-producer/" tabindex="-1" aria-hidden="true">
+              <div class="mock mock--nord">
+                <div class="mock__bar"><i></i><i></i><i></i><span>nord-beats.de</span></div>
+                <div class="mock__body">
+                  <div class="mn__nav"><b>NØRD</b><span></span><span></span><span></span></div>
+                  <p class="mn__kicker">Producer · Leipzig</p>
+                  <p class="mn__title">NØRD</p>
+                  <div class="mn__wave" data-wave="38"></div>
+                  <div class="mn__row"><span class="mn__btn">Beats hören</span><span class="mn__btn mn__btn--ghost">Booking</span></div>
+                </div>
+              </div>
+            </a>
+            <div class="work__body">
+              <p class="tag">Musik · Producer</p>
+              <h3><a href="demos/musiker-producer/">NØRD – Trap- &amp; Hip-Hop-Producer</a></h3>
+              <p>Dunkel, laut, mit klarer Kante. Besucher hören Beats direkt auf der Seite und sehen die Lizenzpreise. Gebucht wird über ein Formular.</p>
+              <ul class="ticks">
+                <li>Beat-Player mit Hörproben</li>
+                <li>Lizenzen &amp; Services mit Preisen</li>
+                <li>Releases per Zwei-Klick (DSGVO-freundlich)</li>
+              </ul>
+              <a class="link-arrow" href="demos/musiker-producer/">Demo öffnen</a>
+            </div>
+          </article>
+
+          <article class="work__item">
+            <a class="work__shot work__shot--falk" href="demos/handwerk-tischlerei/" tabindex="-1" aria-hidden="true">
+              <div class="mock mock--falk">
+                <div class="mock__bar"><i></i><i></i><i></i><span>tischlerei-falk.de</span></div>
+                <div class="mock__body">
+                  <div class="mf__nav"><b>Tischlerei <em>Falk</em></b><span></span><span></span><span class="mf__pill"></span></div>
+                  <div class="mf__grid">
+                    <div>
+                      <p class="mf__title">Möbel nach Maß.</p>
+                      <p class="mf__sub">Gebaut für genau Ihren Raum.</p>
+                      <span class="mf__btn">Kosten schätzen</span>
+                    </div>
+                    <svg class="mf__art" viewBox="0 0 120 100">
+                      <rect x="1" y="1" width="118" height="98" fill="#e4d8c4"/>
+                      <rect x="18" y="12" width="84" height="80" rx="2" fill="#c9a77c" stroke="#8a6440" stroke-width="2"/>
+                      <line x1="18" y1="38" x2="102" y2="38" stroke="#8a6440" stroke-width="2"/>
+                      <line x1="18" y1="64" x2="102" y2="64" stroke="#8a6440" stroke-width="2"/>
+                      <line x1="60" y1="12" x2="60" y2="92" stroke="#8a6440" stroke-width="2"/>
+                      <rect x="26" y="22" width="8" height="14" fill="#a24a24"/><rect x="36" y="25" width="6" height="11" fill="#5d6b4f"/>
+                      <rect x="70" y="50" width="22" height="12" rx="2" fill="#efe6d8"/>
+                      <circle cx="82" cy="28" r="6" fill="#5d6b4f"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="work__body">
+              <p class="tag">Handwerk · Selbstständig</p>
+              <h3><a href="demos/handwerk-tischlerei/">Tischlerei Falk – Möbel nach Maß</a></h3>
+              <p>Hell, warm und vertrauenswürdig. Kunden schätzen die Kosten selbst und sehen ihr Möbelstück live gezeichnet. Die Schätzung landet direkt in der Anfrage.</p>
+              <ul class="ticks">
+                <li>Preisrechner mit Live-Zeichnung</li>
+                <li>Referenz-Galerie mit Filter</li>
+                <li>Mobile Leiste „Anrufen / Anfrage“</li>
+              </ul>
+              <a class="link-arrow" href="demos/handwerk-tischlerei/">Demo öffnen</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEISTUNGEN -->
+    <section class="section section--alt" id="leistungen">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Leistungen &amp; Preise</p>
+          <h2>Drei Pakete, klare Preise</h2>
+          <p class="section__lead">Du zahlst einmal und kein Abo. Den Code bekommst du komplett, die Seite gehört dir.</p>
+        </header>
+
+        <div class="plans">
+          <article class="plan">
+            <h3>Landingpage</h3>
+            <p class="plan__price"><small>ab</small> 149&nbsp;€</p>
+            <p class="plan__desc">Eine Seite, die alles Wichtige zeigt. Perfekt für den Start, für ein Release oder ein einzelnes Angebot.</p>
+            <ul class="ticks">
+              <li>1 Seite mit bis zu 6 Abschnitten</li>
+              <li>Optimiert fürs Handy</li>
+              <li>Kontaktformular oder Mail-Link</li>
+              <li>SEO-Grundlagen &amp; Vorschaubild für Social Media</li>
+              <li>Hosting eingerichtet (kostenlos)</li>
+              <li>2 Korrekturrunden</li>
+            </ul>
+            <p class="plan__time">Lieferung in ca. 7 Tagen</p>
+            <a class="btn btn--ghost btn--block" href="#rechner" data-preset="landing">Konfigurieren</a>
+          </article>
+
+          <article class="plan plan--featured">
+            <p class="plan__badge">Beliebt</p>
+            <h3>Website</h3>
+            <p class="plan__price"><small>ab</small> 349&nbsp;€</p>
+            <p class="plan__desc">Mehrere Seiten für alles, was du zeigen willst: Musik, Leistungen, Referenzen, Termine.</p>
+            <ul class="ticks">
+              <li>3 Seiten inklusive, jede weitere +40&nbsp;€</li>
+              <li>Alles aus der Landingpage</li>
+              <li>Impressum- &amp; Datenschutz-Seite eingebaut</li>
+              <li>Releases, Galerie oder Leistungen mit Preisen</li>
+              <li>Embeds per Zwei-Klick (DSGVO-freundlich)</li>
+              <li>2 Korrekturrunden</li>
+            </ul>
+            <p class="plan__time">Lieferung in ca. 12 Tagen</p>
+            <a class="btn btn--block" href="#rechner" data-preset="website">Konfigurieren</a>
+          </article>
+
+          <article class="plan">
+            <h3>Extras &amp; Änderungen</h3>
+            <p class="plan__price"><small>ab</small> 29&nbsp;€</p>
+            <p class="plan__desc">Für bestehende Seiten oder als Zusatz zu einem Paket.</p>
+            <ul class="ticks">
+              <li>Neue Abschnitte, Texte, Bilder</li>
+              <li>Beat- oder Musik-Player</li>
+              <li>Preisrechner wie bei der Tischlerei</li>
+              <li>Booking- und Terminanfrage</li>
+              <li>Domain verbinden</li>
+              <li>Zweite Sprache (Englisch)</li>
+            </ul>
+            <p class="plan__time">Meist in 1–3 Tagen erledigt</p>
+            <a class="btn btn--ghost btn--block" href="#anfrage">Anfragen</a>
+          </article>
+        </div>
+        <!-- Falls Kleinunternehmerregelung: Hinweis „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ ergänzen. -->
+        <p class="note">Einmalpreise. Eine eigene Domain (z. B. deinname.de) buchst du selbst bei einem Anbieter deiner Wahl, meist für 1&nbsp;bis 2&nbsp;€ im Monat. Ohne eigene Domain läuft die Seite kostenlos unter einer Adresse des Hosters.</p>
+      </div>
+    </section>
+
+    <!-- PREISRECHNER -->
+    <section class="section" id="rechner">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Preisrechner</p>
+          <h2>Stell dir deine Seite zusammen</h2>
+          <p class="section__lead">Wähle aus, was du brauchst. Die Vorschau zeigt dir sofort, wie deine Seite ungefähr aufgebaut ist, was sie kostet und wann sie fertig ist.</p>
+        </header>
+
+        <div class="calc">
+          <form class="calc__form" id="calc" aria-label="Preisrechner">
+            <fieldset class="calc__group">
+              <legend><span class="step">1</span> Für wen ist die Seite?</legend>
+              <div class="choices choices--3">
+                <label class="choice"><input type="radio" name="aud" value="musik" checked><span><b>Musik</b><small>Artist, Band, Producer, DJ</small></span></label>
+                <label class="choice"><input type="radio" name="aud" value="business"><span><b>Selbstständig</b><small>Handwerk, Dienstleistung, Praxis</small></span></label>
+                <label class="choice"><input type="radio" name="aud" value="other"><span><b>Etwas anderes</b><small>Projekt, Verein, Event</small></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="calc__group">
+              <legend><span class="step">2</span> Wie groß?</legend>
+              <div class="choices choices--2">
+                <label class="choice"><input type="radio" name="size" value="landing"><span><b>Landingpage</b><small>1 Seite · ab 149&nbsp;€</small></span></label>
+                <label class="choice"><input type="radio" name="size" value="website" checked><span><b>Website</b><small>mehrere Seiten · ab 349&nbsp;€</small></span></label>
+              </div>
+              <div class="range" id="pages-wrap">
+                <label for="pages">Anzahl Seiten: <output id="pages-out" for="pages">4</output></label>
+                <input type="range" id="pages" name="pages" min="3" max="8" step="1" value="4">
+                <div class="range__scale" aria-hidden="true"><span>3</span><span>8</span></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="calc__group">
+              <legend><span class="step">3</span> Extras</legend>
+              <div class="extras" id="extras"><!-- per JS gefüllt --></div>
+            </fieldset>
+          </form>
+
+          <aside class="calc__result" aria-live="polite">
+            <div class="pv-host" id="calc-preview" aria-hidden="true"></div>
+            <div class="result">
+              <div class="result__top">
+                <div>
+                  <p class="result__label">Richtpreis</p>
+                  <p class="result__price" id="r-price">389&nbsp;€</p>
+                </div>
+                <div>
+                  <p class="result__label">Fertig in</p>
+                  <p class="result__days" id="r-days">ca. 13 Tagen</p>
+                </div>
+              </div>
+              <ul class="result__list" id="r-list"></ul>
+              <button type="button" class="btn btn--block" id="r-send">Mit dieser Auswahl anfragen</button>
+              <p class="result__hint">Unverbindlich. Den Festpreis bekommst du nach einer kurzen Abstimmung.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section class="section section--alt" id="ueber-mich">
+      <div class="wrap about">
+        <div class="about__text">
+          <p class="eyebrow">Über mich</p>
+          <h2>Ich mache selbst Musik und baue Websites.</h2>
+          <p>Ich produziere selbst Musik und studiere Wirtschaftsinformatik. Deshalb weiß ich, was Artists auf ihrer Seite brauchen, und was Selbstständige: Kunden sollen schnell verstehen, was du anbietest, was es kostet und wie sie dich erreichen.</p>
+          <p>Ich baue jede Seite von Hand mit HTML, CSS und JavaScript. Das klingt altmodisch, hat aber Vorteile: Die Seite lädt schnell, braucht keine Updates und läuft kostenlos bei Hostern wie GitHub Pages oder Netlify.</p>
+        </div>
+        <ul class="values">
+          <li>
+            <h3>Kein Abo</h3>
+            <p>Du zahlst einmal. Danach fallen höchstens die Kosten für deine eigene Domain an.</p>
+          </li>
+          <li>
+            <h3>Dein Code</h3>
+            <p>Du bekommst alle Dateien. Wechseln, erweitern, selbst ändern, das liegt ganz bei dir.</p>
+          </li>
+          <li>
+            <h3>Datenschutz mitgedacht</h3>
+            <p>Keine Google Fonts vom Google-Server, Spotify und YouTube erst nach Klick, kein Tracking ohne Grund.</p>
+          </li>
+          <li>
+            <h3>Schnell &amp; schlank</h3>
+            <p>Ohne Baukasten-Ballast. Das merken Besucher im Mobilnetz, und Google merkt es auch.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABLAUF -->
+    <section class="section" id="ablauf">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Ablauf</p>
+          <h2>Von der Anfrage bis online</h2>
+        </header>
+        <ol class="steps">
+          <li><h3>Anfrage</h3><p>Du schickst mir, was du brauchst, gern direkt aus dem Preisrechner.</p></li>
+          <li><h3>Abstimmung</h3><p>Ein kurzer Fragebogen oder ein Call: Inhalte, Stil, Vorbilder. Danach steht der Festpreis.</p></li>
+          <li><h3>Entwurf</h3><p>Du bekommst einen Link zur fertigen Seite und schaust sie dir in Ruhe an, auch auf dem Handy.</p></li>
+          <li><h3>Feinschliff</h3><p>Zwei Korrekturrunden sind inklusive. Texte, Farben, Reihenfolge, alles kann sich noch ändern.</p></li>
+          <li><h3>Online</h3><p>Ich stelle die Seite online, verbinde auf Wunsch deine Domain und übergebe dir alle Dateien.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="wrap faq">
+        <header class="section__head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Häufige Fragen</h2>
+        </header>
+        <div class="faq__list">
+          <details>
+            <summary>Was kostet die Seite nach dem Launch?</summary>
+            <p>Das Hosting ist bei GitHub Pages, Netlify oder Cloudflare Pages kostenlos. Wenn du eine eigene Domain willst, zahlst du die direkt beim Anbieter, meist 1&nbsp;bis 2&nbsp;€ im Monat. Von mir kommt keine laufende Rechnung.</p>
+          </details>
+          <details>
+            <summary>Brauche ich Fotos oder fertige Texte?</summary>
+            <p>Hilfreich, aber nicht nötig. Wenn du keine Fotos hast, arbeite ich mit Grafiken oder lizenzfreien Bildern. Texte kann ich als Extra für dich schreiben. Du gibst mir Stichpunkte, ich mache daraus etwas Lesbares.</p>
+          </details>
+          <details>
+            <summary>Kann ich meine Musik oder Videos einbinden?</summary>
+            <p>Ja. Spotify, YouTube und SoundCloud baue ich per Zwei-Klick-Lösung ein: Der Player lädt erst, wenn Besucher zustimmen. Eigene Hörproben spielt die Seite auch direkt ab.</p>
+          </details>
+          <details>
+            <summary>Was ist mit Impressum und Datenschutzerklärung?</summary>
+            <p>Beide Seiten baue ich ein und verlinke sie überall. Den Inhalt erstellst du am besten mit einem Generator oder lässt ihn prüfen. Rechtsberatung darf und kann ich nicht geben.</p>
+          </details>
+          <details>
+            <summary>Warum nicht einfach Wix oder WordPress?</summary>
+            <p>Kann man machen. Baukästen kosten aber oft jeden Monat Geld, WordPress braucht regelmäßige Updates. Eine handgebaute Seite ist schneller, wartungsarm und gehört komplett dir. Für einen großen Onlineshop wäre ein Shopsystem allerdings die bessere Wahl.</p>
+          </details>
+          <details>
+            <summary>Kann ich später selbst etwas ändern?</summary>
+            <p>Ja. Texte, Preise und Termine stehen gut lesbar im Code, Farben und Schriften sind zentral an einer Stelle festgelegt. Wenn du das nicht selbst machen willst, kosten Änderungen ab 29&nbsp;€.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANFRAGE -->
+    <section class="section" id="anfrage">
+      <div class="wrap contact">
+        <div class="contact__text">
+          <p class="eyebrow">Anfrage</p>
+          <h2>Erzähl mir von deinem Projekt</h2>
+          <p>Ein paar Sätze reichen: wer du bist, was die Seite können soll und bis wann. Du bekommst innerhalb von zwei Werktagen eine Antwort mit Vorschlag und Preis.</p>
+          <!-- Platzhalter: Links zu Plattform-Profilen eintragen, sobald die Gigs online sind -->
+          <div class="platforms">
+            <p class="platforms__label">Bald auch buchbar über</p>
+            <span class="platform">Fiverr</span>
+            <span class="platform">Malt</span>
+          </div>
+        </div>
+
+        <form class="form" id="contact" novalidate>
+          <div class="form__picked" id="picked" hidden>
+            <p><strong>Deine Auswahl:</strong> <span id="picked-text"></span></p>
+            <a href="#rechner">ändern</a>
+          </div>
+          <input type="hidden" name="auswahl" id="picked-input">
+          <div class="form__row">
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span>E-Mail</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <label class="field">
+            <span>Worum geht’s?</span>
+            <select name="art">
+              <option>Neue Landingpage</option>
+              <option>Neue Website</option>
+              <option>Bestehende Seite ändern</option>
+              <option>Noch unsicher</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Nachricht</span>
+            <textarea name="nachricht" rows="5" required placeholder="z. B. Ich bin Rapper aus Köln, brauche eine Seite für mein Album-Release im März …"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="datenschutz" required>
+            <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden.</span>
+          </label>
+          <button class="btn btn--block" type="submit">Anfrage senden</button>
+          <p class="form__status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p class="footer__brand"><span class="logo__mark" aria-hidden="true">W</span> Web-Studio</p>
+      <p class="footer__note">Die Arbeitsproben sind Demo-Projekte mit erfundenen Kunden.</p>
+      <nav class="footer__links" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
